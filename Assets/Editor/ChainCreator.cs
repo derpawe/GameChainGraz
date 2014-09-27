@@ -22,8 +22,8 @@ public class ChainCreator : Editor
 		for(int i=0;i<chainsize;i++){
 			GameObject chainlink = Instantiate(protochainlink) as GameObject;
 			chainlink.transform.parent = chain.transform;
-			if(chainlink.GetComponent<BoxCollider2D>() == null)
-				chainlink.AddComponent<BoxCollider2D>();
+			if(chainlink.GetComponent<CircleCollider2D>() == null)
+				chainlink.AddComponent<CircleCollider2D>();
 			if(chainlink.GetComponent<Rigidbody2D>() == null)
 				chainlink.AddComponent<Rigidbody2D>();
 			chain_list.Add(chainlink);
