@@ -29,10 +29,10 @@ public class ClimberCharacterUserControl : MonoBehaviour
 		#if CROSS_PLATFORM_INPUT
 		float h = CrossPlatformInput.GetAxis("Horizontal");
 		#else
-		float h = Input.GetAxis("Horizontal");
+		float h = Input.GetAxis("Horizontal2");
 		#endif
 
-        float v = Input.GetAxis("Vertical");
+        float v = Input.GetAxis("Vertical2");
 
 		// Pass all parameters to the character control script.
 		character.Move( h,  v );

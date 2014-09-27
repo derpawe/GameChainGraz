@@ -2,7 +2,7 @@
 
 public class JumperCharacterController : MonoBehaviour 
 {
-	bool facingRight = true;							// For determining which way the player is currently facing.
+	bool facingRight = false;							// For determining which way the player is currently facing.
 
 	[SerializeField] float maxSpeed = 10f;				// The fastest the player can travel in the x axis.
 	[SerializeField] float jumpForce = 1500f;			// Amount of force added when the player jumps.	
@@ -29,6 +29,11 @@ public class JumperCharacterController : MonoBehaviour
 	{
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
+        if (grounded)
+        {
+        anim.SetInteger("state", 0);
+
+        }
 	}
 
 
@@ -42,6 +47,12 @@ public class JumperCharacterController : MonoBehaviour
 
 			// Move the character
 			rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
+            if (move != 0 && grounded)
+            {
+            anim.SetInteger("state", 1);
+
+            }
+            
 			
 			// If the input is moving the player right and the player is facing left...
 			if(move > 0 && !facingRight)
@@ -57,6 +68,11 @@ public class JumperCharacterController : MonoBehaviour
         if (grounded && jump) {
             // Add a vertical force to the player.
             rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+        }
+        if (!grounded)
+        {
+            anim.SetInteger("state", 2);
+
         }
 	}
 
