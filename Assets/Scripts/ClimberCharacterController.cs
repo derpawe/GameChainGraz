@@ -58,7 +58,7 @@ public class ClimberCharacterController : MonoBehaviour
         if (move != 0 && grounded && !walled)
         {
             anim.SetInteger("state", 1);
-            Debug.Log("1");
+            //Debug.Log("1");
 
         }
         
@@ -66,13 +66,13 @@ public class ClimberCharacterController : MonoBehaviour
         {
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, climbing * 13f);
             anim.SetInteger("state", 2);
-            Debug.Log("2");
+            //Debug.Log("2");
         }
 
         if (grounded && !walled && (move == 0))
         {
             anim.SetInteger("state", 0);
-            Debug.Log("0");
+            //Debug.Log("0");
         }
 	}
 
