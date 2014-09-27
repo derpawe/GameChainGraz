@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Camera2DFollow : MonoBehaviour {
 	
-	public Transform target;
+	public Transform target1;
+	public Transform target2;
 	public float damping = 1;
 	public float lookAheadFactor = 3;
 	public float lookAheadReturnSpeed = 0.5f;
@@ -16,8 +17,8 @@ public class Camera2DFollow : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		lastTargetPosition = target.position;
-		offsetZ = (transform.position - target.position).z;
+		lastTargetPosition = (target1.position + target2.position) / 2;
+		offsetZ = (transform.position - lastTargetPosition).z;
 		transform.parent = null;
 	}
 	
@@ -25,7 +26,7 @@ public class Camera2DFollow : MonoBehaviour {
 	void Update () {
 		
 		// only update lookahead pos if accelerating or changed direction
-		float xMoveDelta = (target.position - lastTargetPosition).x;
+		float xMoveDelta = ((target1.position + target2.position) / 2 - lastTargetPosition).x;
 
 	    bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
 
@@ -35,11 +36,11 @@ public class Camera2DFollow : MonoBehaviour {
 			lookAheadPos = Vector3.MoveTowards(lookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);	
 		}
 		
-		Vector3 aheadTargetPos = target.position + lookAheadPos + Vector3.forward * offsetZ;
+		Vector3 aheadTargetPos = (target1.position + target2.position) / 2 + lookAheadPos + Vector3.forward * offsetZ;
 		Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
 		
 		transform.position = newPos;
 		
-		lastTargetPosition = target.position;		
+		lastTargetPosition = (target1.position + target2.position) / 2;		
 	}
 }
