@@ -28,7 +28,7 @@ public class ClimberCharacterController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-        float charRadius = collider2D.bounds.size.x / 2 + 2f;
+        float charRadius = collider2D.bounds.size.x / 2 + 1f;
         Vector3 charCenter = new Vector3(collider2D.bounds.center.x, collider2D.bounds.center.y + 1.5f, 0);
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
