@@ -7,21 +7,22 @@ public class RopeController : MonoBehaviour {
 		Transform climber = GameObject.Find("ClimberCharacter").transform;
 		float distance = (jumper.position - climber.position).magnitude;
 
-		float radius = distance * distance / transform.childCount * 0.05f;
-		radius = Mathf.Min(0.25f, Mathf.Max(0.05f, radius));
+		float radius = distance * distance / transform.childCount * 0.6f;
+		radius = Mathf.Min(0.5f, Mathf.Max(0.1f, radius));
 
 		Transform prevChild = null;
 		foreach (Transform child in transform) {
 			child.GetComponent<CircleCollider2D>().radius = radius;
 			if (prevChild != null) {
 				// break rope
-				if ((child.position - prevChild.position).magnitude > 1.3) {
+				if ((child.position - prevChild.position).magnitude > 2.0) {
 					child.GetComponent<HingeJoint2D>().enabled = false;
+					climber.GetComponent<DistanceJoint2D>().enabled = false;
 					// TODO loose game
 
 					// reset chain
 					foreach (Transform innerChild in transform) {
-						innerChild.GetComponent<CircleCollider2D>().radius = 0.05f;
+						innerChild.GetComponent<CircleCollider2D>().radius = 0.1f;
 					}
 					return;
 				}
