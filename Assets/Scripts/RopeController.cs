@@ -31,7 +31,7 @@ public class RopeController : MonoBehaviour {
 		}
 
 		// hochzieh-hack by valentin
-		if (climber.position.y > jumper.position.y) {
+		/*if (climber.position.y > jumper.position.y) {
 			climber.GetComponent<Rigidbody2D>().mass = 40f;
 		} else {
 			climber.GetComponent<Rigidbody2D>().mass = 0.01f;
@@ -40,6 +40,6 @@ public class RopeController : MonoBehaviour {
 				climber.rigidbody2D.AddForce(new Vector2(0, distance * 0.005f));
 				climber.Translate(new Vector2(0, distance * 0.005f));
 			}
-		}
+		}*/
 	}
 }
