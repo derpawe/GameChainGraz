@@ -18,7 +18,8 @@ public class RopeController : MonoBehaviour {
 				if ((child.position - prevChild.position).magnitude > 2.0) {
 					child.GetComponent<HingeJoint2D>().enabled = false;
 					climber.GetComponent<DistanceJoint2D>().enabled = false;
-					// TODO loose game
+					GameObject.Find("JumperCharacter").GetComponent<JumperCharacterController>().isAlreadyDead = true;
+					GameObject.Find("ClimberCharacter").GetComponent<ClimberCharacterController>().isAlreadyDead = true;
 
 					// reset chain
 					foreach (Transform innerChild in transform) {
