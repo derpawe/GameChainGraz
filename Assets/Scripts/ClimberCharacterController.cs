@@ -45,10 +45,13 @@ public class ClimberCharacterController : MonoBehaviour
 
 				lastGroundedPosition = transform.position;
 			} else {
-				anim.SetBool("isDead", true);
+				foreach (var circleColliderObj in gameObject.GetComponents<CircleCollider2D>()) {
+					circleColliderObj.enabled = false;
+				}
+				anim.SetInteger("state", 5);
 			}
-		} else {
-			if((lastGroundedPosition.y - transform.position.y) > 4)
+		} else if (!grounded) {
+			if((lastGroundedPosition.y - transform.position.y) > 4 && !isAlreadyDead)
 			{
 				anim.SetInteger("state", 4);
 				isAlreadyDead = true;

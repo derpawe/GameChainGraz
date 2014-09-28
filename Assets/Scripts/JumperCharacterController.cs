@@ -43,9 +43,12 @@ public class JumperCharacterController : MonoBehaviour
 				lastGroundedPosition = transform.position;
 			} else
 			{
-				anim.SetBool("isDead", true);
+				foreach (var circleColliderObj in gameObject.GetComponents<CircleCollider2D>()) {
+					circleColliderObj.enabled = false;
+				}
+				anim.SetInteger("state", 5);
 			}
-        } else {
+        } else if (!grounded) {
 			if((lastGroundedPosition.y - transform.position.y) > 4)
 			{
 				anim.SetInteger("state", 4);
