@@ -1549,8 +1549,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .427764177
-  m_Center: {x: .0299999993, y: .209999993}
+  m_Radius: .400000006
+  m_Center: {x: 0, y: -.25999999}
 --- !u!58 &5800028
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -1659,8 +1659,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .840157628, y: .825585961}
-  m_Center: {x: .02862221, y: -.247207642}
+  m_Size: {x: .800406277, y: .894215882}
+  m_Center: {x: .000365257292, y: .179659799}
 --- !u!61 &6100002
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1782,9 +1782,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
+  airSpeed: 2
+  airControl: 1
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 4294966783
+    m_Bits: 4294966271
   whatIsClimbable:
     serializedVersion: 2
     m_Bits: 256
@@ -1830,6 +1832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
+  airSpeed: 5
   jumpForce: 15000
   airControl: 1
   whatIsGround:
