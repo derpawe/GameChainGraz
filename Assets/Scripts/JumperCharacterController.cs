@@ -11,9 +11,7 @@ public class JumperCharacterController : MonoBehaviour
 	
 	[SerializeField] bool airControl = false;			// Whether or not a player can steer while jumping;
 	[SerializeField] LayerMask whatIsGround;			// A mask determining what is ground to the character
-	
-	Transform groundCheck;								// A position marking where to check if the player is grounded.
-	float groundedRadius = .2f;							// Radius of the overlap circle to determine if grounded
+
 	bool grounded = false;								// Whether or not the player is grounded.
 	Animator anim;										// Reference to the player's animator component.
 	Vector2 groundColliderPoint;
@@ -23,27 +21,37 @@ public class JumperCharacterController : MonoBehaviour
     void Awake()
 	{
 		// Setting up references.
-		groundCheck = transform.Find("GroundCheck");
 		anim = GetComponent<Animator>();
 
 		// set groundCollider a little bit lower and smaller than physics-circleCollider
 		CircleCollider2D collider = transform.GetComponent<CircleCollider2D>();
-		groundedRadius = collider.radius /* 0.95f;*/;
-		groundColliderPoint = new Vector2(collider.center.x, collider.center.y);
+		groundColliderRadius = collider.radius * 0.95f;
+		groundColliderPoint = new Vector2(collider.center.x, collider.center.y - 0.1f);
 	}
 
 
 	void FixedUpdate()
 	{
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
-		//grounded = Physics2D.OverlapCircle (groundColliderPoint, groundColliderRadius, whatIsGround);
         if (grounded)
         {
         	anim.SetInteger("state", 0);
         }
 	}
 
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if ((1 << col.gameObject.layer & whatIsGround.value) != 0) {
+			grounded = true;
+		}
+	}
+	
+	
+	void OnTriggerExit2D(Collider2D col)
+	{
+		if ((1 << col.gameObject.layer & whatIsGround.value) != 0) {
+			grounded = false;
+		}
+	}
 
 	public void Move(float move, bool crouch, bool jump)
 	{

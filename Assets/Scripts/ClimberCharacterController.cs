@@ -10,10 +10,8 @@ public class ClimberCharacterController : MonoBehaviour
 	[SerializeField] bool airControl = false;			// Whether or not a player can steer while jumping;
 	[SerializeField] LayerMask whatIsGround;			// A mask determining what is ground to the character
     [SerializeField] LayerMask whatIsClimbable;			// A mask determining what is ground to the character
-	
-	Transform groundCheck;								// A position marking where to check if the player is grounded.
-	float groundedRadius = .3f;							// Radius of the overlap circle to determine if grounded
-	bool grounded = false;								// Whether or not the player is grounded.						// Radius of the overlap circle to determine if the player can stand up
+
+	bool grounded = false;								// Whether or not the player is grounded.
 	Animator anim;										// Reference to the player's animator component.
     bool walled = false;
     CharacterController controller;
@@ -21,21 +19,36 @@ public class ClimberCharacterController : MonoBehaviour
     void Awake()
 	{
 		// Setting up references.
-		groundCheck = transform.Find("GroundCheckClimber");
 		anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
 	}
-
-
+	
 	void FixedUpdate()
 	{
-        float charRadius = collider2D.bounds.size.x / 2 + 1f;
-        Vector3 charCenter = new Vector3(collider2D.bounds.center.x, collider2D.bounds.center.y + 0.3f, 0);
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
-        walled = Physics2D.OverlapCircle(charCenter, charRadius, whatIsClimbable);
-	}
+		float charRadius = collider2D.bounds.size.x / 2 + 1f;
+		Vector3 charCenter = new Vector3(collider2D.bounds.center.x, collider2D.bounds.center.y + 0.3f, 0);
+		walled = Physics2D.OverlapCircle(charCenter, charRadius, whatIsClimbable);
 
+		if (grounded)
+		{
+			anim.SetInteger("state", 0);
+		}
+	}
+	
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if ((1 << col.gameObject.layer & whatIsGround.value) != 0) {
+			grounded = true;
+		}
+	}
+	
+	
+	void OnTriggerExit2D(Collider2D col)
+	{
+		if ((1 << col.gameObject.layer & whatIsGround.value) != 0) {
+			grounded = false;
+		}
+	}
 
 	public void Move(float move, float climbing)
 	{
