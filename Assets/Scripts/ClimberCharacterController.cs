@@ -11,9 +11,9 @@ public class ClimberCharacterController : MonoBehaviour
 	[SerializeField] LayerMask whatIsGround;			// A mask determining what is ground to the character
     public LayerMask whatIsClimbable;			// A mask determining what is ground to the character
 
-	bool grounded = false;								// Whether or not the player is grounded.
+	int grounded = 0;								// Whether or not the player is grounded.
 	Animator anim;										// Reference to the player's animator component.
-    public bool walled = false;
+    public int walled = 0;
     CharacterController controller;
 
 	int fallToDeathLimit = 7;
@@ -29,13 +29,9 @@ public class ClimberCharacterController : MonoBehaviour
 	
 	void FixedUpdate()
 	{
-		if (grounded) {
+		if (grounded > 0) {
 			if (!isAlreadyDead) {
-				float charRadius = collider2D.bounds.size.x / 2 + 1f;
-				Vector3 charCenter = new Vector3(collider2D.bounds.center.x, collider2D.bounds.center.y + 0.3f, 0);
-				//walled = Physics2D.OverlapCircle(charCenter, charRadius, whatIsClimbable);
-
-				if (walled)
+				if (walled > 0)
 				{
 					anim.SetInteger("state", 2);
 				}
@@ -43,7 +39,6 @@ public class ClimberCharacterController : MonoBehaviour
 				{
 					anim.SetInteger("state", 0);
 				}
-
 				lastGroundedPosition = transform.position;
 			} else {
 				foreach (var circleColliderObj in gameObject.GetComponents<CircleCollider2D>()) {
@@ -51,7 +46,7 @@ public class ClimberCharacterController : MonoBehaviour
 				}
 				anim.SetInteger("state", 5);
 			}
-		} else if (!grounded) {
+		} else if (grounded <= 0) {
 			if((lastGroundedPosition.y - transform.position.y) > fallToDeathLimit && !isAlreadyDead)
 			{
 				anim.SetInteger("state", 4);
@@ -64,7 +59,7 @@ public class ClimberCharacterController : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if ((1 << col.gameObject.layer & whatIsGround.value) != 0) {
-			grounded = true;
+			grounded = grounded + 1;
 		}
 	}
 	
@@ -72,7 +67,7 @@ public class ClimberCharacterController : MonoBehaviour
 	void OnTriggerExit2D(Collider2D col)
 	{
 		if ((1 << col.gameObject.layer & whatIsGround.value) != 0) {
-			grounded = false;
+			grounded = grounded -1;
 		}
 	}
 
@@ -82,7 +77,7 @@ public class ClimberCharacterController : MonoBehaviour
 						return;
 
 		//only control the player if grounded or airControl is turned on
-		if (grounded || airControl) {
+		if (grounded > 0|| airControl) {
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !facingRight) {
 				Flip ();// ... flip the player.
@@ -91,15 +86,15 @@ public class ClimberCharacterController : MonoBehaviour
 				Flip ();// ... flip the player.
 			}
 
-			rigidbody2D.velocity = new Vector2 (move * (grounded ? maxSpeed : airSpeed), rigidbody2D.velocity.y);
+			rigidbody2D.velocity = new Vector2 (move * (grounded > 0 ? maxSpeed : airSpeed), rigidbody2D.velocity.y);
 
-			if (move != 0 && grounded && !walled) {
+			if (move != 0 && grounded > 0 && walled <= 0) {
 				anim.SetInteger ("state", 1);
 				//Debug.Log("1");
 			}
 		}
         
-        if (walled)
+        if (walled > 0)
         {
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, climbing * 7f);
             if (climbing != 0 && !audio.isPlaying)
