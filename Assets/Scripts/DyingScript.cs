@@ -7,11 +7,17 @@ public class DyingScript : MonoBehaviour {
     public AudioClip dying;
 
 	void Update () {
-
-        if (GameObject.Find("JumperCharacter").GetComponent<JumperCharacterController>().isAlreadyDead && GameObject.Find("ClimberCharacter").GetComponent<ClimberCharacterController>().isAlreadyDead)
+        if (GameObject.Find("JumperCharacter").GetComponent<JumperCharacterController>().isAlreadyDead 
+		    && GameObject.Find("ClimberCharacter").GetComponent<ClimberCharacterController>().isAlreadyDead)
         {
-            audio.PlayOneShot(dying);
-        }
-        
+			audio.PlayOneShot(dying);
+			StartCoroutine(LoadNext());
+		}
+	}
+
+	private IEnumerator LoadNext()
+	{
+		yield return new WaitForSeconds(1.5f);
+		Application.LoadLevel(Application.loadedLevel);
 	}
 }
