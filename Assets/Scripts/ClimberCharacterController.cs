@@ -80,27 +80,45 @@ public class ClimberCharacterController : MonoBehaviour
 		if (isAlreadyDead)
 			return;
 
-		//only control the player if grounded or airControl is turned on
-		if (grounded > 0|| airControl) {
-			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !facingRight) {
-				Flip ();// ... flip the player.
-					// Otherwise if the input is moving the player left and the player is facing right...
-			} else if (move < 0 && facingRight) {
-				Flip ();// ... flip the player.
-			}
+		Vector2 newVelocity = new Vector2(rigidbody2D.velocity.x, rigidbody2D.velocity.y);
 
-			rigidbody2D.velocity = new Vector2 (move * (grounded > 0 ? maxSpeed : airSpeed), rigidbody2D.velocity.y);
+		//only control the player if grounded or airControl is turned on
+		if (grounded > 0 || airControl) {
+			newVelocity.x = move * (grounded > 0 ? maxSpeed : airSpeed) * (walled ? 0.1f : 1f);
+
+			if (move > 0 && !facingRight) {
+				Flip(); // If the input is moving the player right and the player is facing left...
+
+				if (walled) {
+					// jump from wall
+					walled = false;
+					rigidbody2D.transform.Translate(0.5f, 0, 0);
+					newVelocity.x *= 10f;
+					anim.SetInteger("state", 0);
+				}
+			} else if (move < 0 && facingRight) {
+				Flip(); // Otherwise if the input is moving the player left and the player is facing right...
+
+				if (walled) {
+					// jump from wall
+					walled = false;
+					rigidbody2D.transform.Translate(-0.5f, 0, 0);
+					newVelocity.x *= 10f;
+					anim.SetInteger("state", 0);
+				}
+			}
 		}
         
         if (walled)
         {
-            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, climbing * 7f);
+            newVelocity.y = climbing * 7f;
             if (climbing != 0 && !audio.isPlaying)
             {
                 audio.Play();
             }
         }
+
+		rigidbody2D.velocity = newVelocity;
 	}
 
 	
