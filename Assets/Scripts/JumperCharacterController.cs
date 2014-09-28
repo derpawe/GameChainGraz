@@ -18,7 +18,7 @@ public class JumperCharacterController : MonoBehaviour
 	float groundColliderRadius;
 
 	Vector3 lastGroundedPosition;
-	bool isAlreadyDead = false;
+	public bool isAlreadyDead = false;
 
     void Awake()
 	{
