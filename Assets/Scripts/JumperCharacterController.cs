@@ -17,6 +17,7 @@ public class JumperCharacterController : MonoBehaviour
 	Vector2 groundColliderPoint;
 	float groundColliderRadius;
 
+	int fallToDeathLimit = 7;
 	Vector3 lastGroundedPosition;
 	public bool isAlreadyDead = false;
 
@@ -49,7 +50,7 @@ public class JumperCharacterController : MonoBehaviour
 				anim.SetInteger("state", 5);
 			}
         } else if (!grounded) {
-			if((lastGroundedPosition.y - transform.position.y) > 4)
+			if((lastGroundedPosition.y - transform.position.y) > fallToDeathLimit)
 			{
 				anim.SetInteger("state", 4);
 				isAlreadyDead = true;

@@ -16,6 +16,7 @@ public class ClimberCharacterController : MonoBehaviour
     public bool walled = false;
     CharacterController controller;
 
+	int fallToDeathLimit = 7;
 	Vector3 lastGroundedPosition;
 	public bool isAlreadyDead = false;
 
@@ -51,7 +52,7 @@ public class ClimberCharacterController : MonoBehaviour
 				anim.SetInteger("state", 5);
 			}
 		} else if (!grounded) {
-			if((lastGroundedPosition.y - transform.position.y) > 4 && !isAlreadyDead)
+			if((lastGroundedPosition.y - transform.position.y) > fallToDeathLimit && !isAlreadyDead)
 			{
 				anim.SetInteger("state", 4);
 				isAlreadyDead = true;
