@@ -6299,6 +6299,8 @@ GameObject:
   - 124: {fileID: 1377911737}
   - 81: {fileID: 1377911736}
   - 114: {fileID: 1377911735}
+  - 82: {fileID: 1377911742}
+  - 114: {fileID: 1377911741}
   - 82: {fileID: 1377911740}
   m_Layer: 0
   m_Name: Main Camera
@@ -6410,6 +6412,78 @@ AudioSource:
   m_Pitch: 1
   Loop: 1
   Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &1377911741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400020, guid: 9102a4e3ba51ddf4bbffbd878df874a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1210371446}
+  m_GameObject: {fileID: 1377911733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2a6bc446bf5e44aa3cbdf59568859a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dying: {fileID: 8300000, guid: 293acd77f90d6b446a11bf60fedcf741, type: 3}
+--- !u!82 &1377911742
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200004, guid: 9102a4e3ba51ddf4bbffbd878df874a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1210371446}
+  m_GameObject: {fileID: 1377911733}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 9a8308c2090644c45b75d328f82422f1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 1
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -9226,7 +9300,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Radius: .449999988
-  m_Center: {x: 0, y: -.100000001}
+  m_Center: {x: 0, y: -.219999999}
 --- !u!1 &1896722214
 GameObject:
   m_ObjectHideFlags: 0
