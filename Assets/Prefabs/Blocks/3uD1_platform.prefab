@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 68: {fileID: 6800000}
   m_Layer: 8
-  m_Name: platform_schraeg
+  m_Name: 3uD1_platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 42e15634a9f186e4187cff754ead937d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a5c04288040cd54db7d4fb0e9fdc64b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

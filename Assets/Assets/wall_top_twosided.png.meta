@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 47efea9c2f2d6df4e95d561f8751769a
+guid: 67c31c49cbe41404b8890161c89da6f2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: platform_side
+    21300000: wall_top_twosided
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
