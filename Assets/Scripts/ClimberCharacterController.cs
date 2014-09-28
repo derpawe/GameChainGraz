@@ -17,7 +17,7 @@ public class ClimberCharacterController : MonoBehaviour
     CharacterController controller;
 
 	Vector3 lastGroundedPosition;
-	bool isAlreadyDead = false;
+	public bool isAlreadyDead = false;
 
     void Awake()
 	{
