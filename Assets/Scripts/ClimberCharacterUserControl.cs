@@ -4,8 +4,7 @@
 public class ClimberCharacterUserControl : MonoBehaviour 
 {
     private ClimberCharacterController character;
-    private bool climb;
-
+    //private bool climb;
 
 	void Awake()
 	{
@@ -18,7 +17,7 @@ public class ClimberCharacterUserControl : MonoBehaviour
 #if CROSS_PLATFORM_INPUT
         if (CrossPlatformInput.GetButtonDown("Jump")) jump = true;
 #else
-		if (Input.GetButtonDown("Jump")) climb = true;
+		//if (Input.GetButtonDown("Jump")) climb = true;
 #endif
 
     }
@@ -38,6 +37,6 @@ public class ClimberCharacterUserControl : MonoBehaviour
 		character.Move( h,  v );
 
         // Reset the jump input once it has been used.
-	    climb = false;
+	    //climb = false;
 	}
 }
