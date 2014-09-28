@@ -18,6 +18,7 @@ public class JumperCharacterController : MonoBehaviour
 	int fallToDeathLimit = 7;
 	Vector3 lastGroundedPosition;
 	public bool isAlreadyDead = false;
+	private bool canJump = true;
 
     void Awake()
 	{
@@ -55,6 +56,7 @@ public class JumperCharacterController : MonoBehaviour
 	{
 		if ((1 << col.gameObject.layer & whatIsGround.value) != 0) {
 			grounded = grounded + 1;
+			canJump = true;
 		}
 	}
 	
@@ -90,10 +92,11 @@ public class JumperCharacterController : MonoBehaviour
 		}
 		
 		// The player can jump if grounded
-		if (grounded > 0 && jump) {
+		if (grounded > 0 && jump && canJump) {
 			// Add a vertical force to the player.
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
             audio.Play();
+			canJump = false; // resets when collision with ground
 		}
 		if (grounded <= 0 )
 		{
