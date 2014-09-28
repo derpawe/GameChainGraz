@@ -29,7 +29,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 233: {fileID: 23300000}
   - 58: {fileID: 5800002}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - 50: {fileID: 5000002}
   - 233: {fileID: 23300002}
   - 58: {fileID: 5800004}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   - 50: {fileID: 5000004}
   - 233: {fileID: 23300004}
   - 58: {fileID: 5800006}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - 50: {fileID: 5000006}
   - 233: {fileID: 23300006}
   - 58: {fileID: 5800008}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - 50: {fileID: 5000008}
   - 233: {fileID: 23300008}
   - 58: {fileID: 5800010}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - 50: {fileID: 5000010}
   - 233: {fileID: 23300010}
   - 58: {fileID: 5800012}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - 50: {fileID: 5000012}
   - 233: {fileID: 23300012}
   - 58: {fileID: 5800014}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - 50: {fileID: 5000014}
   - 233: {fileID: 23300014}
   - 58: {fileID: 5800016}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - 50: {fileID: 5000016}
   - 233: {fileID: 23300016}
   - 58: {fileID: 5800018}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400028}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - 50: {fileID: 5000018}
   - 233: {fileID: 23300018}
   - 58: {fileID: 5800020}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - 50: {fileID: 5000020}
   - 233: {fileID: 23300020}
   - 58: {fileID: 5800022}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - 50: {fileID: 5000022}
   - 233: {fileID: 23300022}
   - 58: {fileID: 5800024}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - 50: {fileID: 5000026}
   - 233: {fileID: 23300026}
   - 58: {fileID: 5800030}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - 50: {fileID: 5000028}
   - 233: {fileID: 23300028}
   - 58: {fileID: 5800032}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - 50: {fileID: 5000030}
   - 233: {fileID: 23300030}
   - 58: {fileID: 5800034}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   - 50: {fileID: 5000032}
   - 233: {fileID: 23300032}
   - 58: {fileID: 5800036}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - 50: {fileID: 5000034}
   - 233: {fileID: 23300034}
   - 58: {fileID: 5800038}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   - 58: {fileID: 5800042}
   - 95: {fileID: 9500002}
   - 58: {fileID: 5800040}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: JumperCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   - 50: {fileID: 5000038}
   - 233: {fileID: 23300036}
   - 58: {fileID: 5800044}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - 50: {fileID: 5000040}
   - 233: {fileID: 23300038}
   - 58: {fileID: 5800046}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ GameObject:
   - 50: {fileID: 5000042}
   - 233: {fileID: 23300040}
   - 58: {fileID: 5800048}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
