@@ -105,6 +105,7 @@ public class JumperCharacterController : MonoBehaviour
 		if (grounded && jump) {
 			// Add a vertical force to the player.
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+            audio.Play();
 		}
 		if (!grounded)
 		{

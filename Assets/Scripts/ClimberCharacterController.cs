@@ -102,6 +102,10 @@ public class ClimberCharacterController : MonoBehaviour
         if (walled)
         {
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, climbing * 7f);
+            if (climbing != 0 && !audio.isPlaying)
+            {
+                audio.Play();
+            }
         }
 	}
 
