@@ -1305,6 +1305,10 @@ Prefab:
       propertyPath: m_Center.y
       value: -.319999993
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: lookAheadFactor
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
   m_RootGameObject: {fileID: 1013198674}
@@ -2566,6 +2570,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   walled: 0
+  isAlreadyDead: 0
 --- !u!50 &573692524
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -4136,6 +4141,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
+  isAlreadyDead: 0
 --- !u!114 &926749938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6217,7 +6223,7 @@ MonoBehaviour:
   target1: {fileID: 926749931}
   target2: {fileID: 573692515}
   damping: .300000012
-  lookAheadFactor: 1
+  lookAheadFactor: 0
   lookAheadReturnSpeed: 0
   lookAheadMoveThreshold: .100000001
 --- !u!81 &1377911736

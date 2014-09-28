@@ -26,18 +26,19 @@ public class Camera2DFollow : MonoBehaviour {
 	void Update () {
 		
 		// only update lookahead pos if accelerating or changed direction
-		float xMoveDelta = ((target1.position + target2.position) / 2 - lastTargetPosition).x;
+		float yMoveDelta = ((target1.position + target2.position) / 2 - lastTargetPosition).y;
 
-	    bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
+	    bool updateLookAheadTarget = Mathf.Abs(yMoveDelta) > lookAheadMoveThreshold;
 
 		if (updateLookAheadTarget) {
-			lookAheadPos = lookAheadFactor * Vector3.right * Mathf.Sign(xMoveDelta);
+			lookAheadPos = lookAheadFactor * Vector3.down * Mathf.Sign(yMoveDelta);
 		} else {
 			lookAheadPos = Vector3.MoveTowards(lookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);	
 		}
 		
 		Vector3 aheadTargetPos = (target1.position + target2.position) / 2 + lookAheadPos + Vector3.forward * offsetZ;
 		Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
+		newPos.x = 0;
 		
 		transform.position = newPos;
 		
