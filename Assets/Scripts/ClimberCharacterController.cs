@@ -16,6 +16,9 @@ public class ClimberCharacterController : MonoBehaviour
     public bool walled = false;
     CharacterController controller;
 
+	Vector3 lastGroundedPosition;
+	bool isAlreadyDead = false;
+
     void Awake()
 	{
 		// Setting up references.
@@ -25,18 +28,33 @@ public class ClimberCharacterController : MonoBehaviour
 	
 	void FixedUpdate()
 	{
-		float charRadius = collider2D.bounds.size.x / 2 + 1f;
-		Vector3 charCenter = new Vector3(collider2D.bounds.center.x, collider2D.bounds.center.y + 0.3f, 0);
-		//walled = Physics2D.OverlapCircle(charCenter, charRadius, whatIsClimbable);
+		if (grounded) {
+			if (!isAlreadyDead) {
+				float charRadius = collider2D.bounds.size.x / 2 + 1f;
+				Vector3 charCenter = new Vector3(collider2D.bounds.center.x, collider2D.bounds.center.y + 0.3f, 0);
+				//walled = Physics2D.OverlapCircle(charCenter, charRadius, whatIsClimbable);
 
-		if (walled)
-		{
-			anim.SetInteger("state", 2);
+				if (walled)
+				{
+					anim.SetInteger("state", 2);
+				}
+				else
+				{
+					anim.SetInteger("state", 0);
+				}
+
+				lastGroundedPosition = transform.position;
+			} else {
+				anim.SetBool("isDead", true);
+			}
+		} else {
+			if((lastGroundedPosition.y - transform.position.y) > 4)
+			{
+				anim.SetInteger("state", 4);
+				isAlreadyDead = true;
+			}
 		}
-		else
-		{
-			anim.SetInteger("state", 0);
-		}
+
 	}
 	
 	void OnTriggerEnter2D(Collider2D col)
@@ -56,6 +74,9 @@ public class ClimberCharacterController : MonoBehaviour
 
 	public void Move(float move, float climbing)
 	{
+		if (isAlreadyDead)
+						return;
+
 		//only control the player if grounded or airControl is turned on
 		if (grounded || airControl) {
 			// If the input is moving the player right and the player is facing left...

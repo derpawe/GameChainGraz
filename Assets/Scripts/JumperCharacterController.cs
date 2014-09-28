@@ -17,6 +17,8 @@ public class JumperCharacterController : MonoBehaviour
 	Vector2 groundColliderPoint;
 	float groundColliderRadius;
 
+	Vector3 lastGroundedPosition;
+	bool isAlreadyDead = false;
 
     void Awake()
 	{
@@ -27,6 +29,7 @@ public class JumperCharacterController : MonoBehaviour
 		CircleCollider2D collider = transform.GetComponent<CircleCollider2D>();
 		groundColliderRadius = collider.radius * 0.95f;
 		groundColliderPoint = new Vector2(collider.center.x, collider.center.y - 0.1f);
+		lastGroundedPosition = transform.position;
 	}
 
 
@@ -34,8 +37,22 @@ public class JumperCharacterController : MonoBehaviour
 	{
         if (grounded)
         {
-        	anim.SetInteger("state", 0);
-        }
+			if(!isAlreadyDead)
+			{
+				anim.SetInteger("state", 0);
+				lastGroundedPosition = transform.position;
+			} else
+			{
+				anim.SetBool("isDead", true);
+			}
+        } else {
+			if((lastGroundedPosition.y - transform.position.y) > 4)
+			{
+				anim.SetInteger("state", 4);
+				isAlreadyDead = true;
+			}
+				
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -55,17 +72,20 @@ public class JumperCharacterController : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
+		if (isAlreadyDead)
+			return;
+
 		//only control the player if grounded or airControl is turned on
 		if(grounded || airControl)
-		{
-
+			{
+				
 			// Move the character
 			rigidbody2D.velocity = new Vector2(move * (grounded ? maxSpeed : airSpeed), rigidbody2D.velocity.y);
-            if (move != 0 && grounded)
-            {
-            	anim.SetInteger("state", 1);
-            }
-            
+			if (move != 0 && grounded)
+			{
+				anim.SetInteger("state", 1);
+			}
+			
 			
 			// If the input is moving the player right and the player is facing left...
 			if(move > 0 && !facingRight)
@@ -76,16 +96,16 @@ public class JumperCharacterController : MonoBehaviour
 				// ... flip the player.
 				Flip();
 		}
-
-        // If the player should jump...
-        if (grounded && jump) {
-            // Add a vertical force to the player.
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-        }
-        if (!grounded)
-        {
-            anim.SetInteger("state", 2);
-        }
+		
+		// If the player should jump...
+		if (grounded && jump) {
+			// Add a vertical force to the player.
+			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+		}
+		if (!grounded)
+		{
+			anim.SetInteger("state", 2);
+		}
 	}
 
 	
