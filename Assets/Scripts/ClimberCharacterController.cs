@@ -46,7 +46,7 @@ public class ClimberCharacterController : MonoBehaviour
 				}
 				anim.SetInteger("state", 5);
 			}
-		} else if (grounded <= 0 || walled <= 0) {
+		} else if (grounded <= 0 || !walled) {
 			if((lastGroundedPosition.y - transform.position.y) > fallToDeathLimit && !isAlreadyDead)
 			{
 				anim.SetInteger("state", 4);
