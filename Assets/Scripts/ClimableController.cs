@@ -13,7 +13,7 @@ public class ClimableController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if ((1 << col.gameObject.layer & whatIsClimbable.value) != 0) {
-			controller.walled = controller.walled + 1;
+			controller.walled = true;
 		}
 	}
 	
@@ -21,7 +21,7 @@ public class ClimableController : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D col)
 	{
 		if ((1 << col.gameObject.layer & whatIsClimbable.value) != 0) {
-			controller.walled = controller.walled - 1;
+			controller.walled = false;
 		}
 	}
 }

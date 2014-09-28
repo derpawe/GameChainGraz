@@ -13,7 +13,7 @@ public class ClimberCharacterController : MonoBehaviour
 
 	int grounded = 0;								// Whether or not the player is grounded.
 	Animator anim;										// Reference to the player's animator component.
-    public int walled = 0;
+    public bool walled = false;
     CharacterController controller;
 
 	int fallToDeathLimit = 7;
@@ -31,7 +31,7 @@ public class ClimberCharacterController : MonoBehaviour
 	{
 		if (grounded > 0) {
 			if (!isAlreadyDead) {
-				if (walled > 0)
+				if (walled)
 				{
 					anim.SetInteger("state", 2);
 				}
@@ -88,13 +88,13 @@ public class ClimberCharacterController : MonoBehaviour
 
 			rigidbody2D.velocity = new Vector2 (move * (grounded > 0 ? maxSpeed : airSpeed), rigidbody2D.velocity.y);
 
-			if (move != 0 && grounded > 0 && walled <= 0) {
+			if (move != 0 && grounded > 0 && !walled) {
 				anim.SetInteger ("state", 1);
 				//Debug.Log("1");
 			}
 		}
         
-        if (walled > 0)
+        if (walled)
         {
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, climbing * 7f);
             if (climbing != 0 && !audio.isPlaying)
