@@ -8,7 +8,7 @@ public class FlagTouched : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		Debug.Log("something touched the flag..");
+		//Debug.Log("something touched the flag..");
 
 		if(!levelEnded && col.gameObject.tag.Equals("Player"))
 			FallDown();
