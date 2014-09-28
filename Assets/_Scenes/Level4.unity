@@ -1856,7 +1856,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3bb17379ac72b984ca490736158e8333, type: 2}
       propertyPath: nextLevel
-      value: Won
+      value: End
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3bb17379ac72b984ca490736158e8333, type: 2}
@@ -5169,7 +5169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbb316e90dc8d34e9b95cccbc3577f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Won
+  nextLevel: End
 --- !u!60 &543493662
 PolygonCollider2D:
   m_ObjectHideFlags: 0
