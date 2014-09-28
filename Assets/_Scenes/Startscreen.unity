@@ -2548,7 +2548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbb316e90dc8d34e9b95cccbc3577f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Startscreen
+  nextLevel: Level2
 --- !u!60 &684317741
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5307,6 +5307,7 @@ GameObject:
   - 81: {fileID: 1307643981}
   - 114: {fileID: 1307643980}
   - 82: {fileID: 1307643986}
+  - 114: {fileID: 1307643987}
   - 82: {fileID: 1307643985}
   m_Layer: 0
   m_Name: Main Camera
@@ -5476,7 +5477,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -5521,6 +5522,19 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1307643987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400020, guid: 9102a4e3ba51ddf4bbffbd878df874a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 938947406}
+  m_GameObject: {fileID: 1307643978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2a6bc446bf5e44aa3cbdf59568859a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dying: {fileID: 8300000, guid: 293acd77f90d6b446a11bf60fedcf741, type: 3}
 --- !u!1 &1332015644
 GameObject:
   m_ObjectHideFlags: 0
@@ -7060,6 +7074,10 @@ Prefab:
     - target: {fileID: 400000, guid: 3bb17379ac72b984ca490736158e8333, type: 2}
       propertyPath: m_RootOrder
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3bb17379ac72b984ca490736158e8333, type: 2}
+      propertyPath: nextLevel
+      value: Level2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3bb17379ac72b984ca490736158e8333, type: 2}
