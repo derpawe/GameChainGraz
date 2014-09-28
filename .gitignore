@@ -5,6 +5,7 @@ Temp/
 Obj/
 UnityGenerated/
 /Library/
+bin/gameChain_Data/output_log.txt
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
