@@ -4,6 +4,7 @@ using System.Collections;
 public class FlagTouched : MonoBehaviour {
 
 	private bool levelEnded = false;
+	public string nextLevel = "Startscreen";
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
@@ -22,8 +23,13 @@ public class FlagTouched : MonoBehaviour {
 						transform.position += move * Time.deltaTime;
 
 		levelEnded = true;
-		Application.LoadLevel("Level1");
+		StartCoroutine(LoadNext());
+	}
 
+	private IEnumerator LoadNext()
+	{
+		yield return new WaitForSeconds(1);
+		Application.LoadLevel(nextLevel);
 	}
 
 	// Use this for initialization
