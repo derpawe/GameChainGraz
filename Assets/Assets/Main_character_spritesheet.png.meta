@@ -65,7 +65,7 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Main_character_spritesheet_1
       rect:
@@ -75,7 +75,7 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Main_character_spritesheet_2
       rect:
@@ -85,7 +85,7 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Main_character_spritesheet_3
       rect:
@@ -95,7 +95,7 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Main_character_spritesheet_4
       rect:
@@ -105,7 +105,7 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Main_character_spritesheet_5
       rect:
@@ -115,7 +115,7 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Main_character_spritesheet_6
       rect:
@@ -125,17 +125,17 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Main_character_spritesheet_7
       rect:
         serializedVersion: 2
-        x: 833
+        x: 834
         y: 0
-        width: 119
+        width: 118
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Main_character_spritesheet_8
       rect:
@@ -145,8 +145,8 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 1, w: 0}
     - name: Main_character_spritesheet_9
       rect:
         serializedVersion: 2
@@ -155,17 +155,17 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Main_character_spritesheet_10
       rect:
         serializedVersion: 2
         x: 1190
         y: 0
-        width: 119
+        width: 118
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Main_character_spritesheet_11
       rect:
@@ -175,8 +175,8 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 2, w: 0}
     - name: Main_character_spritesheet_12
       rect:
         serializedVersion: 2
@@ -185,7 +185,7 @@ TextureImporter:
         width: 119
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
