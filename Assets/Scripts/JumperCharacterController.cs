@@ -12,10 +12,8 @@ public class JumperCharacterController : MonoBehaviour
 	[SerializeField] bool airControl = false;			// Whether or not a player can steer while jumping;
 	[SerializeField] LayerMask whatIsGround;			// A mask determining what is ground to the character
 
-	bool grounded = false;								// Whether or not the player is grounded.
+	int grounded = 0;								// Whether or not the player is grounded.
 	Animator anim;										// Reference to the player's animator component.
-	Vector2 groundColliderPoint;
-	float groundColliderRadius;
 
 	int fallToDeathLimit = 7;
 	Vector3 lastGroundedPosition;
@@ -25,18 +23,13 @@ public class JumperCharacterController : MonoBehaviour
 	{
 		// Setting up references.
 		anim = GetComponent<Animator>();
-
-		// set groundCollider a little bit lower and smaller than physics-circleCollider
-		CircleCollider2D collider = transform.GetComponent<CircleCollider2D>();
-		groundColliderRadius = collider.radius * 0.95f;
-		groundColliderPoint = new Vector2(collider.center.x, collider.center.y - 0.1f);
 		lastGroundedPosition = transform.position;
 	}
 
 
 	void FixedUpdate()
 	{
-        if (grounded)
+        if (grounded > 0)
         {
 			if(!isAlreadyDead)
 			{
@@ -49,28 +42,27 @@ public class JumperCharacterController : MonoBehaviour
 				}
 				anim.SetInteger("state", 5);
 			}
-        } else if (!grounded) {
+        } else if (grounded <=  0) {
 			if((lastGroundedPosition.y - transform.position.y) > fallToDeathLimit)
 			{
 				anim.SetInteger("state", 4);
 				isAlreadyDead = true;
 			}
-				
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if ((1 << col.gameObject.layer & whatIsGround.value) != 0) {
-			grounded = true;
+			grounded = grounded + 1;
 		}
 	}
 	
 	
 	void OnTriggerExit2D(Collider2D col)
 	{
-		if ((1 << col.gameObject.layer & whatIsGround.value) != 0) {
-			grounded = false;
+		if((1 << col.gameObject.layer & whatIsGround.value) != 0) {
+			grounded = grounded - 1;
 		}
 	}
 
@@ -80,36 +72,32 @@ public class JumperCharacterController : MonoBehaviour
 			return;
 
 		//only control the player if grounded or airControl is turned on
-		if(grounded || airControl)
+		if(grounded > 0 || airControl)
 			{
 				
 			// Move the character
-			rigidbody2D.velocity = new Vector2(move * (grounded ? maxSpeed : airSpeed), rigidbody2D.velocity.y);
-			if (move != 0 && grounded)
+			rigidbody2D.velocity = new Vector2(move * (grounded>0 ? maxSpeed : airSpeed), rigidbody2D.velocity.y);
+			if (move != 0 && grounded > 0)
 			{
-				anim.SetInteger("state", 1);
+				anim.SetInteger("state", 1);//walk anim
 			}
-			
-			
 			// If the input is moving the player right and the player is facing left...
-			if(move > 0 && !facingRight)
-				// ... flip the player.
+			if(move > 0 && !facingRight){
 				Flip();
-			// Otherwise if the input is moving the player left and the player is facing right...
-			else if(move < 0 && facingRight)
-				// ... flip the player.
+			} else if(move < 0 && facingRight){
 				Flip();
+			}
 		}
 		
-		// If the player should jump...
-		if (grounded && jump) {
+		// The player can jump if grounded
+		if (grounded > 0 && jump) {
 			// Add a vertical force to the player.
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
             audio.Play();
 		}
-		if (!grounded)
+		if (grounded <= 0 )
 		{
-			anim.SetInteger("state", 2);
+			anim.SetInteger("state", 2);// air animation
 		}
 	}
 
