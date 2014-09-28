@@ -15,7 +15,7 @@ public class RopeController : MonoBehaviour {
 			child.GetComponent<CircleCollider2D>().radius = radius;
 			if (prevChild != null) {
 				// break rope
-				if ((child.position - prevChild.position).magnitude > 2.0) {
+				if ((child.position - prevChild.position).magnitude > 1.3f) {
 					child.GetComponent<HingeJoint2D>().enabled = false;
 					climber.GetComponent<DistanceJoint2D>().enabled = false;
 					GameObject.Find("JumperCharacter").GetComponent<JumperCharacterController>().isAlreadyDead = true;

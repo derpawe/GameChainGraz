@@ -73,15 +73,19 @@ public class JumperCharacterController : MonoBehaviour
 		if (isAlreadyDead)
 			return;
 
+		if ((grounded <= 0) && (Mathf.Abs (rigidbody2D.velocity.y) > 3f)) { // air anim only when movin up/down
+			anim.SetInteger ("state", 2); // air animation
+		} else {
+			anim.SetInteger ("state", 0); // idle animation
+		}
+
 		//only control the player if grounded or airControl is turned on
-		if(grounded > 0 || airControl)
-			{
-				
+		if(grounded > 0 || airControl) {
 			// Move the character
-			rigidbody2D.velocity = new Vector2(move * (grounded>0 ? maxSpeed : airSpeed), rigidbody2D.velocity.y);
+			rigidbody2D.velocity = new Vector2(move * (grounded > 0 ? maxSpeed : airSpeed), rigidbody2D.velocity.y);
 			if (move != 0 && grounded > 0)
 			{
-				anim.SetInteger("state", 1);//walk anim
+				anim.SetInteger("state", 1); //walk anim
 			}
 			// If the input is moving the player right and the player is facing left...
 			if(move > 0 && !facingRight){
@@ -97,10 +101,6 @@ public class JumperCharacterController : MonoBehaviour
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
             audio.Play();
 			canJump = false; // resets when collision with ground
-		}
-		if (grounded <= 0 )
-		{
-			anim.SetInteger("state", 2);// air animation
 		}
 	}
 
