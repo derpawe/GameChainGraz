@@ -1089,6 +1089,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 11400014, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: jumpForce
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
   m_RootGameObject: {fileID: 1013198674}
@@ -6465,7 +6469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 10
   airSpeed: 5
-  jumpForce: 800
+  jumpForce: 1000
   airControl: 1
   whatIsGround:
     serializedVersion: 2

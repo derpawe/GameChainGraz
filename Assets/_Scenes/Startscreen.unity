@@ -411,6 +411,18 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: orthographic size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
   m_RootGameObject: {fileID: 225529533}
@@ -3123,7 +3135,7 @@ Transform:
   m_GameObject: {fileID: 469957720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.09000003, y: -.0199999996, z: 10}
-  m_LocalScale: {x: 8.00042534, y: 3.12202692, z: 1}
+  m_LocalScale: {x: 10, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 1307643979}
   m_RootOrder: 1
@@ -3903,7 +3915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbb316e90dc8d34e9b95cccbc3577f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Level2
+  nextLevel: Level1
 --- !u!60 &684317741
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7728,7 +7740,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9877,7 +9889,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3bb17379ac72b984ca490736158e8333, type: 2}
       propertyPath: nextLevel
-      value: Level2
+      value: Level1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3bb17379ac72b984ca490736158e8333, type: 2}
