@@ -9,11 +9,11 @@ public class ClimberCharacterController : MonoBehaviour
 	
 	[SerializeField] bool airControl = false;			// Whether or not a player can steer while jumping;
 	[SerializeField] LayerMask whatIsGround;			// A mask determining what is ground to the character
-    [SerializeField] LayerMask whatIsClimbable;			// A mask determining what is ground to the character
+    public LayerMask whatIsClimbable;			// A mask determining what is ground to the character
 
 	bool grounded = false;								// Whether or not the player is grounded.
 	Animator anim;										// Reference to the player's animator component.
-    bool walled = false;
+    public bool walled = false;
     CharacterController controller;
 
     void Awake()
@@ -27,9 +27,13 @@ public class ClimberCharacterController : MonoBehaviour
 	{
 		float charRadius = collider2D.bounds.size.x / 2 + 1f;
 		Vector3 charCenter = new Vector3(collider2D.bounds.center.x, collider2D.bounds.center.y + 0.3f, 0);
-		walled = Physics2D.OverlapCircle(charCenter, charRadius, whatIsClimbable);
+		//walled = Physics2D.OverlapCircle(charCenter, charRadius, whatIsClimbable);
 
-		if (grounded)
+		if (walled)
+		{
+			anim.SetInteger("state", 2);
+		}
+		else
 		{
 			anim.SetInteger("state", 0);
 		}
@@ -73,14 +77,6 @@ public class ClimberCharacterController : MonoBehaviour
         if (walled)
         {
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, climbing * 7f);
-            anim.SetInteger("state", 2);
-            //Debug.Log("2");
-        }
-
-        if (grounded && !walled && (move == 0))
-        {
-            anim.SetInteger("state", 0);
-            //Debug.Log("0");
         }
 	}
 
