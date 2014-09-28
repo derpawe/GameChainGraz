@@ -154,7 +154,7 @@ GameObject:
   - 50: {fileID: 100609836}
   - 233: {fileID: 100609837}
   - 58: {fileID: 100609838}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   - 50: {fileID: 284614648}
   - 233: {fileID: 284614651}
   - 58: {fileID: 284614649}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,6 +470,59 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!1 &294147221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100062, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+  m_PrefabInternal: {fileID: 419314617}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 294147222}
+  - 58: {fileID: 294147224}
+  - 114: {fileID: 294147223}
+  m_Layer: 10
+  m_Name: Climbable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &294147222
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400062, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+  m_PrefabInternal: {fileID: 419314617}
+  m_GameObject: {fileID: 294147221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1682715320}
+  m_RootOrder: 0
+--- !u!114 &294147223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400018, guid: 9102a4e3ba51ddf4bbffbd878df874a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 419314617}
+  m_GameObject: {fileID: 294147221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f54ed2d1de4f749ba7a32644b21341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &294147224
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800050, guid: 9102a4e3ba51ddf4bbffbd878df874a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 419314617}
+  m_GameObject: {fileID: 294147221}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: .449999988
+  m_Center: {x: 0, y: -.100000001}
 --- !u!1 &338481594
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +535,7 @@ GameObject:
   - 50: {fileID: 338481596}
   - 233: {fileID: 338481595}
   - 58: {fileID: 338481597}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +637,7 @@ GameObject:
   - 50: {fileID: 393869175}
   - 233: {fileID: 393869176}
   - 58: {fileID: 393869177}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +764,95 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100054, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100034, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100036, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100042, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100044, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100048, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100050, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100056, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100058, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100060, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
@@ -839,7 +980,7 @@ GameObject:
   - 50: {fileID: 497667336}
   - 233: {fileID: 497667337}
   - 58: {fileID: 497667338}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -971,7 +1112,7 @@ GameObject:
   - 50: {fileID: 762285129}
   - 233: {fileID: 762285128}
   - 58: {fileID: 762285130}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1112,6 +1253,85 @@ SpriteRenderer:
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 1eb118a3a66a22e49b2c5b3a2e87db0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &791071000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 791071004}
+  - 212: {fileID: 791071003}
+  - 50: {fileID: 791071002}
+  - 61: {fileID: 791071001}
+  m_Layer: 11
+  m_Name: icicle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &791071001
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 791071000}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.60000002, y: .980000019}
+  m_Center: {x: 0, y: 0}
+--- !u!50 &791071002
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 791071000}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!212 &791071003
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 791071000}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: a85da3f0ddcb1184080f572c91f4cfe7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &791071004
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 791071000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.42019987, y: 1.37230003, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1381346210}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &924389386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +1344,7 @@ GameObject:
   - 50: {fileID: 924389389}
   - 233: {fileID: 924389388}
   - 58: {fileID: 924389390}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2301,7 +2521,7 @@ GameObject:
   - 50: {fileID: 1023388191}
   - 233: {fileID: 1023388192}
   - 58: {fileID: 1023388193}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2403,7 +2623,7 @@ GameObject:
   - 50: {fileID: 1038982319}
   - 233: {fileID: 1038982320}
   - 58: {fileID: 1038982321}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2502,7 +2722,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1170913289}
   - 114: {fileID: 1170913290}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2627,7 +2847,7 @@ GameObject:
   - 50: {fileID: 1282762100}
   - 233: {fileID: 1282762101}
   - 58: {fileID: 1282762102}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2779,6 +2999,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &1381346209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1381346210}
+  - 61: {fileID: 1381346211}
+  m_Layer: 0
+  m_Name: trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 1177953632, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1381346210
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1381346209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .904959977, y: -1.85380006, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 791071004}
+  m_RootOrder: 0
+--- !u!61 &1381346211
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1381346209}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .300000012, y: .300000012}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1390065108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,7 +3069,7 @@ Transform:
   - {fileID: 1967208785}
   - {fileID: 4205754}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1539705570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,7 +3082,7 @@ GameObject:
   - 50: {fileID: 1539705572}
   - 233: {fileID: 1539705573}
   - 58: {fileID: 1539705574}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2925,7 +3184,7 @@ GameObject:
   - 50: {fileID: 1641232359}
   - 233: {fileID: 1641232361}
   - 58: {fileID: 1641232362}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3164,7 +3423,7 @@ Transform:
   m_LocalPosition: {x: .853269994, y: -2.99370003, z: .046875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2021146364}
+  - {fileID: 294147222}
   m_Father: {fileID: 570505981}
   m_RootOrder: 1
 --- !u!58 &1682715321
@@ -3305,7 +3564,7 @@ GameObject:
   - 50: {fileID: 1749724638}
   - 233: {fileID: 1749724637}
   - 58: {fileID: 1749724639}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3407,7 +3666,7 @@ GameObject:
   - 50: {fileID: 1751118095}
   - 233: {fileID: 1751118094}
   - 58: {fileID: 1751118096}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3509,7 +3768,7 @@ GameObject:
   - 50: {fileID: 1792675506}
   - 233: {fileID: 1792675507}
   - 58: {fileID: 1792675508}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3673,7 +3932,7 @@ GameObject:
   - 50: {fileID: 1869451643}
   - 233: {fileID: 1869451644}
   - 58: {fileID: 1869451645}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3775,7 +4034,7 @@ GameObject:
   - 50: {fileID: 1871715153}
   - 233: {fileID: 1871715152}
   - 58: {fileID: 1871715154}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3949,7 +4208,7 @@ GameObject:
   - 58: {fileID: 1968300787}
   - 95: {fileID: 1968300779}
   - 58: {fileID: 1968300784}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: JumperCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4090,59 +4349,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .400000006
   m_Center: {x: 0, y: -.25999999}
---- !u!1 &2021146363
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100062, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
-  m_PrefabInternal: {fileID: 419314617}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2021146364}
-  - 58: {fileID: 2021146365}
-  - 114: {fileID: 2021146366}
-  m_Layer: 10
-  m_Name: Climbable
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2021146364
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400062, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
-  m_PrefabInternal: {fileID: 419314617}
-  m_GameObject: {fileID: 2021146363}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1682715320}
-  m_RootOrder: 0
---- !u!58 &2021146365
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800050, guid: 9102a4e3ba51ddf4bbffbd878df874a7,
-    type: 2}
-  m_PrefabInternal: {fileID: 419314617}
-  m_GameObject: {fileID: 2021146363}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Radius: .449999988
-  m_Center: {x: 0, y: -.100000001}
---- !u!114 &2021146366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400018, guid: 9102a4e3ba51ddf4bbffbd878df874a7,
-    type: 2}
-  m_PrefabInternal: {fileID: 419314617}
-  m_GameObject: {fileID: 2021146363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7f54ed2d1de4f749ba7a32644b21341, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2088992354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4155,7 +4361,7 @@ GameObject:
   - 50: {fileID: 2088992356}
   - 233: {fileID: 2088992357}
   - 58: {fileID: 2088992358}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4257,7 +4463,7 @@ GameObject:
   - 50: {fileID: 2138316552}
   - 233: {fileID: 2138316551}
   - 58: {fileID: 2138316553}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4359,7 +4565,7 @@ GameObject:
   - 50: {fileID: 2139813458}
   - 233: {fileID: 2139813457}
   - 58: {fileID: 2139813459}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
