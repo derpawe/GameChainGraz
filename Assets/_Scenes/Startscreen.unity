@@ -2462,7 +2462,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: time
+  m_Text: best time
 --- !u!222 &287028199
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10371,6 +10371,10 @@ Prefab:
     - target: {fileID: 6100000, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
       propertyPath: m_Center.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400022, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
+      propertyPath: m_Text
+      value: best time
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9102a4e3ba51ddf4bbffbd878df874a7, type: 2}
