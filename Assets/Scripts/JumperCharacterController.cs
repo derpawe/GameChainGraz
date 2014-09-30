@@ -90,7 +90,7 @@ public class JumperCharacterController : MonoBehaviour
 			// If the input is moving the player right and the player is facing left...
 			if(move > 0 && !facingRight){
 				Flip();
-			} else if(move < 0 && facingRight){
+			} else if(move < 0 && facingRight) {
 				Flip();
 			}
 		}
