@@ -34,9 +34,11 @@ public class MovingBlock : MonoBehaviour {
 		Vector2 bottomRight = new Vector2(rightPos, bottomPos);
 		if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Jumper"))) {
 			GameObject.Find("MainLevel/Characters/JumperCharacter").transform.position += currentSpeed;
+			GameObject.Find("MainLevel/Characters/rope").transform.position += currentSpeed / 2;
 		}
 		if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Climber"))) {
 			GameObject.Find("MainLevel/Characters/ClimberCharacter").transform.position += currentSpeed;
+			GameObject.Find("MainLevel/Characters/rope").transform.position += currentSpeed / 2;
 		}
 
 	}

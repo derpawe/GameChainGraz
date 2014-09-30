@@ -8,7 +8,7 @@ public class RopeController : MonoBehaviour {
 		float distance = (jumper.position - climber.position).magnitude;
 
 		float radius = distance * distance / transform.childCount * 0.6f;
-		radius = Mathf.Min(0.5f, Mathf.Max(0.1f, radius));
+		radius = Mathf.Min(0.5f, Mathf.Max(0.2f, radius));
 
 		Transform prevChild = null;
 		foreach (Transform child in transform) {
