@@ -35,10 +35,12 @@ public class ChainCreator : Editor
 				h.collideConnected = false;
 				h.anchor = localoffset/2;
 				h.connectedAnchor = -localoffset/2;
-//				prev_chainlink.AddComponent<DistanceJoint2D>();
-//				DistanceJoint2D d = prev_chainlink.GetComponent<DistanceJoint2D>();
-//				d.connectedBody = chainlink.rigidbody2D;
-//				d.distance = 0;
+				prev_chainlink.AddComponent<DistanceJoint2D>();
+				DistanceJoint2D d = prev_chainlink.GetComponent<DistanceJoint2D>();
+				d.connectedBody = chainlink.rigidbody2D;
+				d.anchor = localoffset/2;
+				d.connectedAnchor = -localoffset/2;
+				d.distance = 0;
 			}
 			prev_chainlink = chainlink;
 		}
